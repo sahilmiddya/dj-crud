@@ -17,9 +17,3 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class User(models.Model):
-    name = models.CharField(verbose_name="User's namw", max_length=100)
-    # role
-    pass
