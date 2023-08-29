@@ -23,10 +23,10 @@ urlpatterns = [
     # Retrieve task list
     path('', views.task_list, name='task_list'),
     # Retrieve single task object
-    re_path(r'^(?P<pk>\d+)/$', views.task_detail, name='task_detail'),
+    path('detail/<int:pk>/', views.task_detail, name='task_detail'),
     # Update a task
-    re_path(r'^(?P<pk>\d+)/update/$', views.task_update, name='task_update'),
+    path('update/<int:pk>/', views.task_update, name='task_update'),
     # Delete a task
-    re_path(r'^(?P<pk>\d+)/delete/$', views.task_delete, name='task_delete'),
+    path('delete/<int:pk>/', views.task_delete, name='task_delete'),
 
 ]
