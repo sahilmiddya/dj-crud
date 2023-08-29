@@ -1,9 +1,8 @@
-# -*- coding:utf-8 -*-
+
 
 from django.urls import path, re_path
 from . import views
 
-# namespace
 app_name = 'tasks'
 
 urlpatterns = [
@@ -19,13 +18,13 @@ urlpatterns = [
     # re_path(r'^(?P<pk>\d+)/delete/$', views.TaskDeleteView.as_view(), name='task_delete')
 
     # Create a task
-    path('create/', views.task_create, name='task_create'),
+    path('create/', views.TaskCreateView.as_view(), name='task_create'),
     # Retrieve task list
-    path('', views.task_list, name='task_list'),
+    path('', views.TaskListView.as_view(), name='task_list'),
     # Retrieve single task object
-    path('detail/<int:pk>/', views.task_detail, name='task_detail'),
+    path('detail/<int:pk>/', views.TaskDetailView.as_view(), name='task_detail'),
     # Update a task
-    path('update/<int:pk>/', views.task_update, name='task_update'),
+    path('update/<int:pk>/', views.TaskUpdateView.as_view(), name='task_update'),
     # Delete a task
     path('delete/<int:pk>/', views.task_delete, name='task_delete'),
 

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>
-      {% if object %}Edit Task {% else %} Create New Task {% endif %}
+      {{ title }}
     </title>
   </head>
   <body>
-    <h3>{% if object %}Edit Task {% else %} Create New Task {% endif %}</h3>
+    <h3>{{ title }}</h3>
     <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %} {{ form.as_p }}
       <p><input type="submit" class="btn btn-success" value="Submit" /></p>
